@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A.T.A. Agencija - Zanesljiv Transport</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <script
+      src="https://kit.fontawesome.com/8e98006f77.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles & Color Variables -->
+    <style>
+      :root {
+        --accent-color: #ffc107;
+        --accent2-color: #198754;
+        --accent3-color: #dc3545;
+        --accent4-color: #6f42c1;
+        --primary-color: #0d6efd;
+        --dark-text-color: #212529;
+        --gray-text-color: #6c757d;
+        --font-family-body: "Roboto", sans-serif;
+        --font-family-heading: "Inter", sans-serif;
+        --button-rounded-radius: 8px;
+        --dark-background-color: #343a40;
+        --light-background-color: #e9f2ff;
+        --primary-button-hover-bg-color: #0d5fc0;
+      }
+
+      /* Animation Keyframes for floating elements */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+        }
+      }
+      @keyframes float-delayed {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(-180deg);
+        }
+      }
+      @keyframes float-slow {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(90deg);
+        }
+      }
+      .animate-float {
+        animation: float 8s ease-in-out infinite;
+      }
+      .animate-float-delayed {
+        animation: float-delayed 10s ease-in-out infinite;
+      }
+      .animate-float-slow {
+        animation: float-slow 12s ease-in-out infinite;
+      }
+
+      /* Apply custom fonts */
+      body {
+        font-family: var(--font-family-body);
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-family-heading);
+      }
+    </style>
+  </head>
+  <body class="h-full bg-white">
+    <!-- HEADER & NAVIGATION -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-24 md:h-28">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a href="#" class="block">
+              <img
+                src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/8d8e0093-2aad-4118-3004-b517dbabdd00/public"
+                alt="A.T.A Agencija Logo"
+                class="h-20 md:h-24 py-2"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center space-x-8">
+            <a
+              href="#about"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-300"
+              >O nas</a
+            >
+            <a
+              href="#services"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-300"
+              >Storitve</a
+            >
+            <a
+              href="#fleet"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-300"
+              >Vozni park</a
+            >
+            <a
+              href="#contact"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium transition-colors duration-300"
+              >Kontakt</a
+            >
+            <a
+              href="#contact"
+              class="bg-[var(--primary-color)] text-white px-6 py-3 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            >
+              Zahtevaj ponudbo
+            </a>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden p-2 rounded-md text-[var(--dark-text-color)] hover:text-[var(--primary-color)] hover:bg-gray-100 transition-colors duration-300"
+          >
+            <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div
+          id="mobile-menu"
+          class="lg:hidden hidden bg-white border-t border-[var(--light-border-color)] py-4"
+        >
+          <nav class="flex flex-col space-y-4">
+            <a
+              href="#about"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 px-4 rounded-md hover:bg-gray-50 transition-colors duration-300"
+              >O nas</a
+            >
+            <a
+              href="#services"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 px-4 rounded-md hover:bg-gray-50 transition-colors duration-300"
+              >Storitve</a
+            >
+            <a
+              href="#fleet"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 px-4 rounded-md hover:bg-gray-50 transition-colors duration-300"
+              >Vozni park</a
+            >
+            <a
+              href="#contact"
+              class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-medium py-2 px-4 rounded-md hover:bg-gray-50 transition-colors duration-300"
+              >Kontakt</a
+            >
+            <a
+              href="#contact"
+              class="bg-[var(--primary-color)] text-white px-6 py-3 rounded-[var(--button-rounded-radius)] hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 font-semibold text-center mx-4 mt-2"
+            >
+              Zahtevaj ponudbo
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      id="hero"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/5ba5a873-94ba-487e-ecfa-b40a4d47e200/public"
+          alt="Mercedes Actros Truck on the road"
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-black via-black to-transparent opacity-70"
+        ></div>
+      </div>
+      <div
+        class="absolute top-20 left-10 w-20 h-20 bg-[var(--primary-color)] rounded-full opacity-20 animate-float"
+      ></div>
+      <div
+        class="absolute bottom-32 right-16 w-16 h-16 bg-[var(--accent-color)] rounded-full opacity-30 animate-float-delayed"
+      ></div>
+      <div
+        class="absolute top-1/3 right-1/4 w-12 h-12 bg-[var(--accent2-color)] rounded-full opacity-25 animate-float-slow"
+      ></div>
+      <div
+        class="relative z-10 container mx-auto px-4 text-center lg:text-left"
+      >
+        <div class="max-w-4xl mx-auto lg:mx-0">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+          >
+            <span class="block">Zanesljiv</span>
+            <span
+              class="block bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent-color)] bg-clip-text text-transparent"
+              >Transport</span
+            >
+            <span class="block">po Sloveniji in Hrvaški</span>
+          </h1>
+          <p
+            class="text-xl lg:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+          >
+            Z dolgoletnimi izkušnjami in voznim parkom Mercedes-Benz
+            zagotavljamo varen prevoz paletnega in hladilniškega blaga.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
+          >
+            <a
+              href="#contact"
+              class="group bg-[var(--primary-color)] text-white px-8 py-4 rounded-[var(--button-rounded-radius)] font-semibold text-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
+            >
+              <span class="flex items-center"
+                >Zahtevaj ponudbo<i
+                  class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                ></i
+              ></span>
+            </a>
+            <a
+              href="#services"
+              class="group bg-white bg-opacity-10 backdrop-blur-md text-white px-8 py-4 rounded-[var(--button-rounded-radius)] font-semibold text-lg border border-white border-opacity-30 hover:bg-opacity-20 transition-all duration-300 hover:scale-105"
+            >
+              <span class="flex items-center"
+                >Naše storitve<i
+                  class="fas fa-chevron-right ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                ></i
+              ></span>
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 lg:grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto lg:mx-0"
+          >
+            <div class="text-center lg:text-left col-span-2 lg:col-span-1">
+              <div
+                class="text-3xl lg:text-4xl font-bold text-[var(--accent-color)] mb-2"
+              >
+                20+
+              </div>
+              <div class="text-gray-300 font-medium">Let izkušenj</div>
+            </div>
+            <div class="text-center lg:text-left">
+              <div
+                class="text-3xl lg:text-4xl font-bold text-[var(--accent-color)] mb-2"
+              >
+                10
+              </div>
+              <div class="text-gray-300 font-medium">Vozil Mercedes-Benz</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div class="animate-bounce">
+          <i class="fas fa-chevron-down text-white text-2xl opacity-70"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section
+      id="services"
+      class="py-20 bg-gradient-to-br from-[var(--light-background-color)] to-white relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-0 left-0 w-full h-full bg-gray-100"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-6"
+          >
+            Naše
+            <span
+              class="bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent-color)] bg-clip-text text-transparent"
+              >Storitve</span
+            >
+          </h2>
+          <p
+            class="text-xl text-[var(--gray-text-color)] max-w-3xl mx-auto leading-relaxed"
+          >
+            Z visoko mero zanesljivosti in strokovnosti nudimo celovite
+            transportne rešitve za vaše potrebe
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div class="group bg-white rounded-2xl p-8 shadow-lg">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-[var(--primary-color)] to-[var(--accent-color)] rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-pallet text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--dark-text-color)] mb-4">
+              Prevoz paletnega blaga
+            </h3>
+            <p class="text-[var(--gray-text-color)] leading-relaxed mb-6">
+              Specializirani smo za varen in zanesljiv prevoz paletnega blaga z
+              našimi sodobnimi vozili Mercedes-Benz.
+            </p>
+          </div>
+          <div class="group bg-white rounded-2xl p-8 shadow-lg">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-[var(--accent2-color)] to-[var(--primary-color)] rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-snowflake text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--dark-text-color)] mb-4">
+              Hladilniški prevoz
+            </h3>
+            <p class="text-[var(--gray-text-color)] leading-relaxed mb-6">
+              Zagotavljamo neprekinjeno hladno verigo za občutljivo blago s
+              sodobnimi hladilnimi sistemi.
+            </p>
+          </div>
+          <div
+            class="group bg-white rounded-2xl p-8 shadow-lg md:col-span-2 lg:col-span-1"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-[var(--accent4-color)] to-[var(--accent2-color)] rounded-xl flex items-center justify-center mb-6"
+            >
+              <i class="fas fa-route text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-[var(--dark-text-color)] mb-4">
+              Mednarodni prevoz
+            </h3>
+            <p class="text-[var(--gray-text-color)] leading-relaxed mb-6">
+              Pokrivamo celotno območje Slovenije in Hrvaške z rednimi linijami
+              in prilagodljivimi rešitvami.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200"
+        >
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 class="text-3xl font-bold text-[var(--dark-text-color)] mb-6">
+                Področje delovanja
+              </h3>
+              <p
+                class="text-lg text-[var(--gray-text-color)] mb-8 leading-relaxed"
+              >
+                Naše storitve pokrivajo celotno območje Slovenije in Hrvaške. Z
+                zanesljivim in korektnim delom smo svoje storitve uspešno
+                razširili čez meje.
+              </p>
+            </div>
+            <div class="relative">
+              <img
+                src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/a12364d6-757e-483d-f0be-bdb05e6fb300/public"
+                alt="Truck on highway"
+                class="w-full h-80 object-cover rounded-2xl shadow-lg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-30 rounded-2xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLEET SECTION -->
+    <section
+      id="fleet"
+      class="py-20 bg-[var(--dark-background-color)] relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[var(--primary-color)] to-transparent opacity-10 rounded-full transform translate-x-48 -translate-y-48"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-[var(--accent-color)] to-transparent opacity-10 rounded-full transform -translate-x-40 translate-y-40"
+      ></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Naš
+            <span
+              class="bg-gradient-to-r from-[var(--accent-color)] to-[var(--primary-color)] bg-clip-text text-transparent"
+              >Vozni Park</span
+            >
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            10 sodobnih vozil Mercedes-Benz, redno servisiranih in pripravljenih
+            za zanesljiv transport
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="relative">
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/2e4faf63-fb11-4065-5ae7-ada46d452a00/public"
+                alt="Mercedes-Benz Actros truck in the desert"
+                class="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-40"
+              ></div>
+            </div>
+          </div>
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-3xl font-bold text-white mb-6">
+                Mercedes-Benz kakovost
+              </h3>
+              <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                Naš vozni park sestavlja 10 sodobnih vozil znamke Mercedes-Benz,
+                ki zagotavljajo najvišjo stopnjo zanesljivosti in varnosti pri
+                prevozu vašega blaga.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--primary-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-tools text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">
+                    Redno servisirano
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    Vsa vozila redno servisiramo za optimalno delovanje
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--accent2-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-shield-alt text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">Varno</h4>
+                  <p class="text-gray-400 text-sm">
+                    Najnovejši varnostni sistemi za zaščito tovora
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--accent-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-leaf text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">
+                    Ekološko
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    Sodobni motorji z nizkimi emisijami
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--accent4-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-clock text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-2">
+                    Zanesljivo
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    Pravočasna dostava brez zamud
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section
+      id="about"
+      class="py-20 bg-gradient-to-br from-white to-[var(--light-background-color)] relative overflow-hidden"
+    >
+      <div
+        class="absolute top-20 left-10 w-32 h-32 bg-[var(--primary-color)] rounded-full opacity-5 animate-float"
+      ></div>
+      <div
+        class="absolute bottom-20 right-20 w-24 h-24 bg-[var(--accent-color)] rounded-full opacity-10 animate-float-delayed"
+      ></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-6"
+          >
+            Zakaj izbrati
+            <span
+              class="bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent2-color)] bg-clip-text text-transparent"
+              >A.T.A. Agencijo</span
+            >
+            ?
+          </h2>
+          <p
+            class="text-xl text-[var(--gray-text-color)] max-w-3xl mx-auto leading-relaxed"
+          >
+            Dolgoletne izkušnje, tradicija in visoka mera zanesljivosti nas
+            ločujejo od konkurence
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div class="space-y-8">
+            <div
+              class="group flex items-start space-x-6 p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-[var(--primary-color)]"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-[var(--primary-color)] to-[var(--accent-color)] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-handshake text-white text-2xl"></i>
+              </div>
+              <div>
+                <h3
+                  class="text-2xl font-bold text-[var(--dark-text-color)] mb-3"
+                >
+                  Zanesljivost in strokovnost
+                </h3>
+                <p class="text-[var(--gray-text-color)] leading-relaxed">
+                  Z visoko mero zanesljivosti in strokovnosti pridobivamo
+                  zadovoljne stranke na domačem in mednarodnem trgu.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group flex items-start space-x-6 p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-[var(--primary-color)]"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-[var(--accent2-color)] to-[var(--primary-color)] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-history text-white text-2xl"></i>
+              </div>
+              <div>
+                <h3
+                  class="text-2xl font-bold text-[var(--dark-text-color)] mb-3"
+                >
+                  Dolgoletne izkušnje
+                </h3>
+                <p class="text-[var(--gray-text-color)] leading-relaxed">
+                  Smo podjetje z dolgoletnimi izkušnjami in tradicijo s področja
+                  avtoprevozništva, ki zagotavlja kakovostne storitve.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group flex items-start space-x-6 p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-[var(--primary-color)]"
+            >
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-[var(--accent4-color)] to-[var(--accent2-color)] rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-expand-arrows-alt text-white text-2xl"></i>
+              </div>
+              <div>
+                <h3
+                  class="text-2xl font-bold text-[var(--dark-text-color)] mb-3"
+                >
+                  Širitev storitev
+                </h3>
+                <p class="text-[var(--gray-text-color)] leading-relaxed">
+                  Z zanesljivim in korektnim delom smo svoje storitve iz območja
+                  Slovenije uspešno razširili tudi na območje Hrvaške.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/6d07c8ff-d183-4675-3c99-21e7ffd18000/public"
+                alt="Truck in Nevada Desert"
+                class="w-full h-[600px] object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-30"
+              ></div>
+            </div>
+            <div
+              class="absolute -bottom-8 -left-8 bg-white rounded-2xl p-8 shadow-2xl border border-gray-200 max-w-sm"
+            >
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--primary-color)] rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-quote-left text-white"></i>
+                </div>
+                <div>
+                  <p class="text-[var(--gray-text-color)] italic mb-3">
+                    "Zanesljivost in strokovnost sta naši glavni prednosti."
+                  </p>
+                  <div
+                    class="text-sm font-semibold text-[var(--dark-text-color)]"
+                  >
+                    Borut Lemut, direktor
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section
+      id="contact"
+      class="py-20 bg-gradient-to-br from-[var(--dark-background-color)] to-black relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <img
+          src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/d1af07cf-bd8f-4a32-53f4-7ca6a9379700/public"
+          alt="Trucks on the road at sunset"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-[var(--dark-background-color)] via-[var(--dark-background-color)] to-transparent opacity-90"
+      ></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Stopite v
+            <span
+              class="bg-gradient-to-r from-[var(--accent-color)] to-[var(--primary-color)] bg-clip-text text-transparent"
+              >Stik</span
+            >
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Pripravljeni smo odgovoriti na vaša vprašanja in pripraviti ponudbo
+            za vaše transportne potrebe
+          </p>
+        </div>
+        <div class="space-y-8 max-w-md mx-auto">
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8 border border-white border-opacity-20"
+          >
+            <h3 class="text-2xl font-bold text-white mb-6">
+              Kontaktni podatki
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--primary-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-1">Naslov</h4>
+                  <p class="text-gray-300">
+                    Ulica Jožeta Mihevca 5<br />5000 Nova Gorica
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--accent2-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-phone text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-1">Telefon</h4>
+                  <a
+                    href="tel:+38641632060"
+                    class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300"
+                    >+386 41 632 060</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--accent-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-envelope text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-1">E-pošta</h4>
+                  <a
+                    href="mailto:borut.lemut@gmail.com"
+                    class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300"
+                    >borut.lemut@gmail.com</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-[var(--accent4-color)] rounded-xl flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fas fa-clock text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold text-white mb-1">
+                    Delovni čas
+                  </h4>
+                  <p class="text-gray-300">
+                    Pon - Pet: 8:00 - 17:00<br />Sob: 8:00 - 12:00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-[var(--dark-background-color)] text-white py-16 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-0 left-0 w-full h-full bg-gray-800"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-12">
+          <div class="lg:col-span-2">
+            <div class="mb-8">
+              <a href="#" class="block mb-6"
+                ><img
+                  src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/8d8e0093-2aad-4118-3004-b517dbabdd00/public"
+                  alt="A.T.A Agencija Logo"
+                  class="h-24 py-2"
+              /></a>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
+              Podjetje z dolgoletnimi izkušnjami in tradicijo s področja
+              avtoprevozništva. Z visoko mero zanesljivosti in strokovnosti
+              nudimo transportne storitve po Sloveniji in Hrvaški.
+            </p>
+            <div class="space-y-3">
+              <div class="flex items-center space-x-3">
+                <i
+                  class="fas fa-map-marker-alt text-[var(--primary-color)] w-5"
+                ></i
+                ><span class="text-gray-300"
+                  >Ulica Jožeta Mihevca 5, 5000 Nova Gorica</span
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-phone text-[var(--primary-color)] w-5"></i
+                ><a
+                  href="tel:+38641632060"
+                  class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300"
+                  >+386 41 632 060</a
+                >
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-envelope text-[var(--primary-color)] w-5"></i
+                ><a
+                  href="mailto:borut.lemut@gmail.com"
+                  class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300"
+                  >borut.lemut@gmail.com</a
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-6">Hitre povezave</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#hero"
+                  class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-[var(--primary-color)] text-xs mr-3"
+                  ></i
+                  >Domov</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-[var(--primary-color)] text-xs mr-3"
+                  ></i
+                  >O nas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-[var(--primary-color)] text-xs mr-3"
+                  ></i
+                  >Storitve</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#fleet"
+                  class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-[var(--primary-color)] text-xs mr-3"
+                  ></i
+                  >Vozni park</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-300 hover:text-[var(--accent-color)] transition-colors duration-300 flex items-center"
+                  ><i
+                    class="fas fa-chevron-right text-[var(--primary-color)] text-xs mr-3"
+                  ></i
+                  >Kontakt</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-6">Naše storitve</h3>
+            <ul class="space-y-3">
+              <li class="text-gray-300 flex items-center">
+                <i
+                  class="fas fa-pallet text-[var(--accent-color)] text-sm mr-3"
+                ></i
+                >Prevoz paletnega blaga
+              </li>
+              <li class="text-gray-300 flex items-center">
+                <i
+                  class="fas fa-snowflake text-[var(--accent-color)] text-sm mr-3"
+                ></i
+                >Hladilniški prevoz
+              </li>
+              <li class="text-gray-300 flex items-center">
+                <i
+                  class="fas fa-route text-[var(--accent-color)] text-sm mr-3"
+                ></i
+                >Mednarodni prevoz
+              </li>
+            </ul>
+            <div class="mt-8">
+              <h4 class="text-lg font-semibold text-white mb-4">
+                Področje delovanja
+              </h4>
+              <div class="flex space-x-4">
+                <span
+                  class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Slovenija</span
+                ><span
+                  class="bg-[var(--accent2-color)] text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Hrvaška</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-600 pt-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+          >
+            <div class="text-gray-400 text-sm">
+              <p>
+                © 2025 A.T.A. Agencija, transport, Nova Gorica d.o.o. Vse
+                pravice pridržane.
+              </p>
+              <p class="mt-1">Davčna številka: SI69079595</p>
+            </div>
+            <div class="text-gray-400 text-sm text-center md:text-right">
+              <p>Direktor: LEMUT ALEŠ</p>
+              <p>Prokurist: LEMUT BORUT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-[var(--primary-color)] to-transparent opacity-5 rounded-full transform translate-x-32 translate-y-32"
+      ></div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const menuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (menuButton && mobileMenu) {
+          menuButton.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById("contact-form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server.
+            // For this example, we'll just show an alert.
+            alert("Hvala za vaše povpraševanje! Kmalu vas bomo kontaktirali.");
+            contactForm.reset(); // Clears the form fields
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
